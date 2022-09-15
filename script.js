@@ -14,16 +14,6 @@ const weatherInfo = document.querySelector('.weather-info');
 let city = 'yangon';
 let unit = 'metric';
 
-searchBtn.addEventListener('click', () => {
-  city = searchInput.value;
-  fetchWeather(city, unit);
-});
-
-unitSelector.addEventListener('click', (e) => {
-  unit = e.target.value;
-  fetchWeather(city, unit);
-});
-
 function fetchWeather(city, unit) {
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=bfe3651d709ea34e5fc59136856edaf6`
@@ -51,3 +41,17 @@ function fetchWeather(city, unit) {
 }
 
 fetchWeather(city, unit);
+
+searchBtn.addEventListener('click', () => {
+  city = searchInput.value;
+  fetchWeather(city, unit);
+});
+
+unitSelector.addEventListener('click', (e) => {
+  unit = e.target.value;
+  fetchWeather(city, unit);
+});
+
+
+
+
